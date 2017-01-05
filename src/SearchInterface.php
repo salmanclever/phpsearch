@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: salman
- * Date: 1/3/17
- * Time: 3:22 PM
- */
+
+interface SearchInterface {
+    public function search($word);
+//    public function showItem();
+//    public function insertItem($item);
+//    public function deleteItem($item);
+}
+?>
