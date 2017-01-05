@@ -1,12 +1,29 @@
 <?php
+require_once 'Reviews.php';
+require_once 'Product.php';
+require_once 'Users.php';
 
-/**
- * Created by PhpStorm.
- * User: salman
- * Date: 1/3/17
- * Time: 3:13 PM
- */
 class Finder
 {
+    private $classList = [
+        'Reviews',
+        'Product',
+        'Users'
+    ];
 
+    public function search($word) {
+        $result = [];
+        foreach ($this->classList as $className) {
+
+            $instance = new $className;
+
+            $result[$className] = $instance->search($word);
+        }
+
+        return $result;
+    }
 }
+
+
+
+?>
